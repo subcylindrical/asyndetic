@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
+import karyatid from './directory-images/directory-image-karyatid.png';
 
 import {
   DirectoryContainer,
   PageContainer,
-  ImageContainer,
-  LinkContainer,
+  LinksContainer,
+  DirectoryImage,
+  DirectoyLinkContainer,
 } from './directory.styles';
 
 const directoryPages = [
@@ -26,14 +28,14 @@ const Directory = () => {
   return (
     <PageContainer>
       <DirectoryContainer>
-        <img src='https://www.theacropolismuseum.gr/sites/default/files/exhibits_images/7719_2.jpg' />
-        <LinkContainer>
+        <DirectoryImage src={karyatid} />
+        <LinksContainer>
           {directoryPages.map((page) => (
-            <div key={page.id}>
+            <DirectoyLinkContainer key={page.id}>
               <Link to={`/${page.title}`}>{page.title}</Link>
-            </div>
+            </DirectoyLinkContainer>
           ))}
-        </LinkContainer>
+        </LinksContainer>
       </DirectoryContainer>
     </PageContainer>
   );

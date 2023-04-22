@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const PageContainer = styled.div`
   width: 100%;
@@ -14,13 +15,24 @@ export const DirectoryContainer = styled.div`
   margin: 50px;
 `;
 
-export const ImageContainer = styled.div`
-  background-image: url('https://www.theacropolismuseum.gr/sites/default/files/exhibits_images/7719_2.jpg');
-  background-image-size: ;
-`;
-
-export const LinkContainer = styled.div`
+export const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  color: #bab1b1;
+`;
+
+export const DirectoryImage = styled.img`
+  height: 550px;
+`;
+
+export const DirectoyLinkContainer = styled.div`
+  font-size: 20px;
+  margin: 20px 20px;
+
+  &:hover {
+    color: green;
+    cursor: pointer;
+    transform: translateX(15px);
+  }
 `;
