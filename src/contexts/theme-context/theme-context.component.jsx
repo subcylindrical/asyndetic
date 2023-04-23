@@ -18,7 +18,7 @@ export const ThemeContext = createContext({
 });
 
 export const ThemeProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(themeReducer, { theme: 'light' });
+  const [state, dispatch] = useReducer(themeReducer, { theme: 'dark' });
   const { theme } = state;
   const setTheme = () => {
     console.log('setTheme called');

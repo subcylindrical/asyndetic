@@ -9,6 +9,8 @@ import {
   DirectoyLinkContainer,
 } from './directory.styles';
 
+import DirectoryLink from '../directory-link/directory-link.component';
+
 const directoryPages = [
   {
     id: 1,
@@ -32,7 +34,7 @@ const Directory = () => {
         <LinksContainer>
           {directoryPages.map((page) => (
             <DirectoyLinkContainer key={page.id}>
-              <Link to={`/${page.title}`}>{page.title}</Link>
+              <DirectoryLink title={page.title} />
             </DirectoyLinkContainer>
           ))}
         </LinksContainer>
