@@ -22,7 +22,7 @@ const directoryPages = [
   },
   {
     id: 3,
-    title: 'more',
+    title: 'contact-me',
   },
 ];
 

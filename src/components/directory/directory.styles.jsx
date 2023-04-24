@@ -33,6 +33,5 @@ export const DirectoyLinkContainer = styled.div`
   &:hover {
     color: green;
     cursor: pointer;
-    transform: translateX(15px);
   }
 `;

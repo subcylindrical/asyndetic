@@ -13,14 +13,28 @@ const Letter = ({ letter }) => {
     'Times-Bold',
     'Times-Italic',
     'Times-BoldItalic',
+    'Palatino',
+    'Garamond',
+    'Bookman',
+    'Avant Garde',
+    'Castoro Titling',
+    'Caveat',
+    'Cinzel',
+    'Dancing Script',
+    'Libre Baskerville',
+    'Nanum Gothic',
+    'Pinyon Script',
+    'Satisfy',
+    'Sedgwick Ave Display',
   ];
 
   return (
     <span
+      onClick={() => console.log('letter clicked')}
       style={{
         fontFamily:
           fontFamilies[Math.floor(Math.random() * fontFamilies.length) + 1],
-        fontSize: 15 + Math.random() * 10,
+        fontSize: 20,
       }}
     >
       {letter}

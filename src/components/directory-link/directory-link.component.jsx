@@ -3,50 +3,51 @@ import Letter from './letter.component';
 import { StyledLink } from './directory-link.styles';
 
 const DirectoryLink = ({ title }) => {
-  const [mouseOver, setMouseOver] = useState(false);
-  const [returnLink, setReturnLink] = useState('');
-  let shuffleInterval = null;
-  useEffect(() => {
-    if (mouseOver) {
-      console.log('link hovered');
-      console.log(mouseOver);
-      shuffleInterval = setInterval(() => {
-        console.log('interval set');
-        setReturnLink(
-          <Fragment>
-            {title.split('').map((letter) => {
-              return (
-                <Letter
-                  letter={letter}
-                  key={letter.charCodeAt(0) * Math.random()}
-                />
-              );
-            })}
-          </Fragment>
+  const [builtTitle, setBuiltTitle] = useState(title);
+  const [buildTitleInterval, setBuildTitleInterval] = useState(null);
+
+  const generateBuiltTitle = () => {
+    setBuiltTitle(
+      title.split('').map((letter) => {
+        return (
+          <Letter letter={letter} key={letter.charCodeAt(0) * Math.random()} />
         );
-      }, 50);
-      return () => clearInterval(shuffleInterval);
-    } else {
-      console.log(mouseOver);
-      clearInterval(shuffleInterval);
-    }
-  }, [mouseOver]);
+      })
+    );
+  };
+
+  const generateSetBuildTitleInterval = () => {
+    if (buildTitleInterval != null) return;
+    setBuildTitleInterval(
+      setInterval(() => {
+        generateBuiltTitle();
+      }, 50)
+    );
+  };
+
+  const removeInterval = () => {
+    clearInterval(buildTitleInterval);
+    setBuildTitleInterval(null);
+    resetTitle();
+  };
+
+  const resetTitle = () => {
+    setBuiltTitle(title);
+  };
 
   return (
     <StyledLink
       onMouseEnter={() => {
-        setMouseOver(true);
+        generateSetBuildTitleInterval();
+        console.log('mouse over');
       }}
       onMouseLeave={() => {
-        setMouseOver(false);
+        removeInterval();
+        console.log('mouse off');
       }}
       to={`/${title}`}
     >
-      {title.split('').map((letter) => {
-        return (
-          <Letter letter={letter} key={letter.charCodeAt(0) * Math.random()} />
-        );
-      })}
+      {builtTitle}
     </StyledLink>
   );
 };
