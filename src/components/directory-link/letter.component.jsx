@@ -30,11 +30,10 @@ const Letter = ({ letter }) => {
 
   return (
     <span
-      onClick={() => console.log('letter clicked')}
       style={{
         fontFamily:
           fontFamilies[Math.floor(Math.random() * fontFamilies.length) + 1],
-        fontSize: 20,
+        fontSize: 20 + Math.random() * 2,
       }}
     >
       {letter}
