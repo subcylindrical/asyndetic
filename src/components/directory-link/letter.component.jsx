@@ -33,7 +33,8 @@ const Letter = ({ letter }) => {
       style={{
         fontFamily:
           fontFamilies[Math.floor(Math.random() * fontFamilies.length) + 1],
-        fontSize: 20 + Math.random() * 2,
+        fontSize: 20 + Math.random() * 10,
+        zIndex: -1,
       }}
     >
       {letter}

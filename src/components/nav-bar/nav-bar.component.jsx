@@ -1,20 +1,30 @@
-import { NavBarContainer, Toggle } from './nav-bar.styles';
+import { NavBarContainer, ThemeToggle } from './nav-bar.styles';
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/theme-context/theme-context.component';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { GlobalStyle } from '../../index.styles';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const NavBar = () => {
   const { setTheme, theme } = useContext(ThemeContext);
+
+  const location = useLocation();
+  const formatPageName = (page) => {
+    if (page.match(/^\/$/)) return 'Home';
+    return page.replace(/[/-]/g, ' ');
+  };
+
   return (
     <>
       <NavBarContainer>
         <GlobalStyle dark={'#1f1f1f'} theme={theme} />
-        <Toggle>
+        <Link to={'/'}>Zachary LeHouillier</Link>
+        <span>{formatPageName(location.pathname)}</span>
+        <ThemeToggle>
           <label>theme: </label>
           <input onChange={setTheme} type={'checkbox'} />
-        </Toggle>
-        <span>Zachary LeHouillier</span>
+        </ThemeToggle>
       </NavBarContainer>
       <Outlet />
     </>

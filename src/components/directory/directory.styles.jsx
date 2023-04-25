@@ -19,7 +19,7 @@ export const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  color: #bab1b1;
+  justify-content: center;
 `;
 
 export const DirectoryImage = styled.img`
@@ -31,7 +31,7 @@ export const DirectoyLinkContainer = styled.div`
   margin: 20px 20px;
 
   &:hover {
-    color: green;
+    color: rgba(245, 39, 91, 1);
     cursor: pointer;
   }
 `;

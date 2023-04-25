@@ -1,10 +1,11 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useState } from 'react';
 import Letter from './letter.component';
 import { StyledLink } from './directory-link.styles';
 
 const DirectoryLink = ({ title }) => {
   const [builtTitle, setBuiltTitle] = useState(title);
   const [buildTitleInterval, setBuildTitleInterval] = useState(null);
+  const INTERVAL_SPEED = 60;
 
   const generateBuiltTitle = () => {
     setBuiltTitle(
@@ -21,7 +22,7 @@ const DirectoryLink = ({ title }) => {
     setBuildTitleInterval(
       setInterval(() => {
         generateBuiltTitle();
-      }, 50)
+      }, INTERVAL_SPEED)
     );
   };
 
@@ -39,11 +40,9 @@ const DirectoryLink = ({ title }) => {
     <StyledLink
       onMouseEnter={() => {
         generateSetBuildTitleInterval();
-        console.log('mouse over');
       }}
       onMouseLeave={() => {
         removeInterval();
-        console.log('mouse off');
       }}
       to={`/${title}`}
     >
