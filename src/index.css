@@ -1,3 +1,7 @@
+:root {
+  --hover-font-color: rgba(245, 39, 91, 1);
+}
+
 * {
   box-sizing: border-box;
 }

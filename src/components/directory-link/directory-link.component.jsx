@@ -34,14 +34,17 @@ const DirectoryLink = ({ title }) => {
 
   const resetTitle = () => {
     setBuiltTitle(title);
+    console.log('resetting title');
   };
 
   return (
     <StyledLink
       onMouseEnter={() => {
+        console.log('mouse enter');
         generateSetBuildTitleInterval();
       }}
       onMouseLeave={() => {
+        console.log('mouse leaving');
         removeInterval();
       }}
       to={`/${title}`}

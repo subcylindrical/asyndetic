@@ -1,0 +1,3 @@
+export const THEME_ACTION_TYPES = {
+  TOGGLE_THEME: 'TOGGLE_THEME',
+};

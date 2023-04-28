@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const PageContainer = styled.div`
   width: 100%;
@@ -31,7 +30,7 @@ export const DirectoyLinkContainer = styled.div`
   margin: 20px 20px;
 
   &:hover {
-    color: rgba(245, 39, 91, 1);
+    color: var(--hover-font-color);
     cursor: pointer;
   }
 `;

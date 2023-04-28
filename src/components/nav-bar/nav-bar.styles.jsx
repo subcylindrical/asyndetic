@@ -10,13 +10,17 @@ export const NavBarContainer = styled.div`
   position: relative;
   width: 100%;
   font-family: 'Castoro Titling';
-  font-size: 30;
   font-weight: 800;
   padding: 0 20px;
 `;
 
 export const ThemeToggle = styled.div`
-  /* position: absolute;
-  top: 15px;
-  right: 10px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & label {
+    position: relative;
+    top: 1px;
+  }
 `;
