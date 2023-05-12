@@ -22,11 +22,11 @@ export const LinksContainer = styled.div`
 `;
 
 export const DirectoryImage = styled.img`
-  height: 550px;
+  max-height: 400px;
 `;
 
 export const DirectoyLinkContainer = styled.div`
-  font-size: 20px;
+  font-size: 24px;
   margin: 20px 20px;
 
   &:hover {

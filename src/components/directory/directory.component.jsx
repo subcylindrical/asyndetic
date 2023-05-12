@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import karyatid from './directory-images/directory-image-karyatid.png';
+import me from './directory-images/profile-photo-min.png';
 
 import {
   DirectoryContainer,
@@ -30,7 +29,7 @@ const Directory = () => {
   return (
     <PageContainer>
       <DirectoryContainer>
-        <DirectoryImage src={karyatid} />
+        <DirectoryImage src={me} />
         <LinksContainer>
           {directoryPages.map((page) => (
             <DirectoyLinkContainer key={page.id}>

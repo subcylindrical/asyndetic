@@ -1,8 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 import grain from './components/directory/directory-images/transparent-grain.png';
-import tv from './components/directory/directory-images/transparent-tv.webp';
 import photoshopGrain from './components/directory/directory-images/photoshop-grain.png';
 import invertPhotoshopGrain from './components/directory/directory-images/invert-photoshop-grain.png';
+import svg from './components/directory/directory-images/svg2.svg';
+import pinksvg from './components/directory/directory-images/pinksvg2transparent.svg';
 
 import { LinksContainer } from './components/directory/directory.styles';
 import { NavBarContainer } from './components/nav-bar/nav-bar.styles';
@@ -12,7 +13,7 @@ body {
   ${(props) => {
     if (props.theme == 'dark') {
       return `
-    background-image: url(${photoshopGrain});
+    background-image: url(${svg});
     background-repeat: repeat;
     background-size: cover;
       `;
@@ -27,7 +28,10 @@ body {
     ${(props) => {
       if (props.theme == 'dark') {
         return `${NavBarContainer} {
-          background-color: rgba(255, 224, 224, 1);
+          background-image: url(${pinksvg});
+          background-repeat: repeat;
+          background-size: cover;
+          background-color: #D36582;
           color: ${props.dark};
         }`;
       } else {
