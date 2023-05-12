@@ -8,9 +8,10 @@ import SettingsGear from '../settings-gear/settings-gear.component';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { THEME_ACTION_TYPES } from '../../store/theme/theme.types';
+import { themeSelector } from '../../store/theme/theme.selectors';
 
 const NavBar = () => {
-  const navState = useSelector((state) => state.theme);
+  const navThemeState = useSelector(themeSelector);
   const dispatch = useDispatch();
 
   const location = useLocation();
@@ -22,7 +23,7 @@ const NavBar = () => {
   return (
     <Fragment>
       <NavBarContainer>
-        <GlobalStyle dark={'#1f1f1f'} theme={navState.theme} />
+        <GlobalStyle dark={'#1f1f1f'} theme={navThemeState} />
         <Link to={'/'}>Zachary LeHouillier</Link>
         <span>{formatPageName(location.pathname)}</span>
         <ThemeToggle>

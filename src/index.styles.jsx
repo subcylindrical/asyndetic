@@ -5,7 +5,6 @@ import photoshopGrain from './components/directory/directory-images/photoshop-gr
 import invertPhotoshopGrain from './components/directory/directory-images/invert-photoshop-grain.png';
 
 import { LinksContainer } from './components/directory/directory.styles';
-import { StyledLink } from './components/directory-link/directory-link.styles';
 import { NavBarContainer } from './components/nav-bar/nav-bar.styles';
 
 export const GlobalStyle = createGlobalStyle`
@@ -13,7 +12,7 @@ body {
   ${(props) => {
     if (props.theme == 'dark') {
       return `
-    background-image: url(${invertPhotoshopGrain});
+    background-image: url(${photoshopGrain});
     background-repeat: repeat;
     background-size: cover;
       `;
