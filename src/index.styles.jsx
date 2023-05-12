@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import grain from './components/directory/directory-images/transparent-grain.png';
-import photoshopGrain from './components/directory/directory-images/photoshop-grain.png';
-import invertPhotoshopGrain from './components/directory/directory-images/invert-photoshop-grain.png';
+
 import svg from './components/directory/directory-images/svg2.svg';
 import pinksvg from './components/directory/directory-images/pinksvg2transparent.svg';
 
