@@ -1,8 +1,11 @@
+import { AboutMeWrapper } from './about-me.styles';
+
 const AboutMe = () => {
   return (
-    <div>
-      <h1>Welcome to the About Me page!</h1>
-    </div>
+    <AboutMeWrapper>
+      <h1>Welcome!</h1>
+      <h2>The About Me page is currently under construction</h2>
+    </AboutMeWrapper>
   );
 };
 

@@ -5,6 +5,7 @@ import pinksvg from './components/directory/directory-images/pinksvg2transparent
 
 import { LinksContainer } from './components/directory/directory.styles';
 import { NavBarContainer } from './components/nav-bar/nav-bar.styles';
+import { StyledLink } from './components/directory-link/directory-link.styles';
 
 export const GlobalStyle = createGlobalStyle`
 body {
@@ -14,6 +15,12 @@ body {
     background-image: url(${svg});
     background-repeat: repeat;
     background-size: cover;
+    color: white;
+
+      ${StyledLink} {
+        color: white;
+      }
+
       `;
     }
   }}
