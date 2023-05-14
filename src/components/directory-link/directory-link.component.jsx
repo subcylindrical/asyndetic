@@ -5,7 +5,14 @@ import { StyledLink } from './directory-link.styles';
 const DirectoryLink = ({ title }) => {
   const [builtTitle, setBuiltTitle] = useState(title);
   const [buildTitleInterval, setBuildTitleInterval] = useState(null);
-  const INTERVAL_SPEED = 60;
+  let INTERVAL_SPEED = 60;
+
+  (() => {
+    if (navigator.userAgent.match(/fox/g)) {
+    }
+  })();
+
+  console.log(INTERVAL_SPEED);
 
   const generateBuiltTitle = () => {
     setBuiltTitle(
@@ -39,9 +46,9 @@ const DirectoryLink = ({ title }) => {
 
   return (
     <StyledLink
-      onMouseEnter={() => {
+      onMouseEnter={(e) => {
         console.log('mouse enter');
-        generateSetBuildTitleInterval();
+        generateSetBuildTitleInterval(e);
       }}
       onMouseLeave={() => {
         console.log('mouse leaving');

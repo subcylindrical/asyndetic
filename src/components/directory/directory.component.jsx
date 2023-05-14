@@ -6,6 +6,7 @@ import {
   LinksContainer,
   DirectoryImage,
   DirectoyLinkContainer,
+  ImageWrapper,
 } from './directory.styles';
 
 import DirectoryLink from '../directory-link/directory-link.component';
@@ -29,7 +30,9 @@ const Directory = () => {
   return (
     <PageContainer>
       <DirectoryContainer>
-        <DirectoryImage src={me} />
+        <ImageWrapper>
+          <DirectoryImage src={me} />
+        </ImageWrapper>
         <LinksContainer>
           {directoryPages.map((page) => (
             <DirectoyLinkContainer key={page.id}>

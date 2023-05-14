@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <Fragment>
       <NavBarContainer>
-        <GlobalStyle dark={'#1f1f1f'} theme={navThemeState} />
+        <GlobalStyle dark={'#121212'} theme={navThemeState} />
         <Link to={'/'}>Zachary LeHouillier</Link>
         <span>{formatPageName(location.pathname)}</span>
         <ThemeToggle>

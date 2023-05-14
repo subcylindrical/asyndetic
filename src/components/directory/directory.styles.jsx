@@ -5,13 +5,15 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 160px 60px 60px 60px;
 `;
 
 export const DirectoryContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 60%;
-  margin: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  min-width: 100%;
+  padding: 0 0 0 60px;
 `;
 
 export const LinksContainer = styled.div`
@@ -19,6 +21,11 @@ export const LinksContainer = styled.div`
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  min-width: 40%;
+`;
+
+export const ImageWrapper = styled.div`
+  padding-right: 60px;
 `;
 
 export const DirectoryImage = styled.img`

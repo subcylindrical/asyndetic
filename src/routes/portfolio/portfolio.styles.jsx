@@ -16,4 +16,11 @@ export const StyledLink = styled(Link)`
   font-weight: 600;
   size: 30px;
   color: #272727;
+  ${(props) => {
+    if (props.theme === 'dark') {
+      return `
+      color: var(--hover-font-color);
+      `;
+    }
+  }}
 `;
